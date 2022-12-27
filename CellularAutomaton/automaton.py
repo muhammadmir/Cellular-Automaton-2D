@@ -1,12 +1,12 @@
 import bitarray
-import visualize
+from . import visualize
 from typing import Literal
 
 
 class Automaton(object):
     """
-    An elementary cellular automaton with an initial state of a single 1.
-
+    An elementary cellular automaton with muliple initial state support.
+    
     The number of rows, `rows`, is given at class instantiation, and the
     automaton is only simulated to that depth. Horizontally, we only
     keep the states of the 2 * `rows` - 1 cells centered around the
@@ -29,6 +29,7 @@ class Automaton(object):
         'New' results in faster generation while 'Old' utilizies the separate
         generation methods dependent on parity of rule.
 
+    Nearly all of the code is from https://github.com/zmwangx/rule30.
     """
 
     def __init__(self, rows: int, rule: int = 30,

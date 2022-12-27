@@ -1,4 +1,4 @@
-from automaton import Automaton
+from .automaton import Automaton
 
 
 def main():
